@@ -1,26 +1,114 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ─────────────────────────────────────────────────────────────────────────
+   "Closer" design system — warm cream/ink palette with flame, grape and
+   lime accents. Imported from the Claude Design "Closer" project and mapped
+   to Tailwind v4 theme tokens so components can use e.g. `bg-flame`,
+   `text-ink`, `border-line`.
+   ──────────────────────────────────────────────────────────────────────── */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* surfaces */
+  --color-cream: #fbf6ef; /* page background */
+  --color-paper: #ffffff; /* cards */
+  --color-sand: #f7f1e8; /* subtle fills */
+  --color-espresso: #241c14; /* dark surface / ink */
+  --color-espresso-2: #3a3028; /* dark surface hover */
+
+  /* text */
+  --color-ink: #241c14;
+  --color-ink-soft: #4a4038;
+  --color-muted: #7a6f60;
+
+  /* lines */
+  --color-line: #ede3d6;
+  --color-line-soft: #f2eae0;
+
+  /* accents */
+  --color-flame: #ff5a36;
+  --color-flame-soft: #ffd9cc;
+  --color-danger: #e14b3d;
+  --color-grape: #6c4cff;
+  --color-grape-soft: #f1ecff;
+  --color-lime: #b6e24d;
+  --color-moss: #3fae73;
+  --color-moss-soft: #e7f6ee;
+  --color-honey: #c6791e;
+  --color-honey-soft: #fdf1dd;
+  --color-rose-soft: #fce7e4;
+
+  --font-display: var(--font-space-grotesk), system-ui, sans-serif;
+  --font-body: var(--font-plex-sans), system-ui, sans-serif;
+
+  --radius-card: 18px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: var(--color-cream);
+  --foreground: var(--color-ink);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background: var(--color-flame);
+  color: #fff;
+}
+
+button:not(:disabled),
+[role="button"],
+label[for],
+summary {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+}
+
+input,
+textarea,
+select {
+  font-family: var(--font-body);
+  outline: none;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--color-grape) !important;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-rise {
+  animation: rise 0.35s ease;
+}
+
+/* Speaking indicator ring around the prospect avatar during a live call. */
+@keyframes speak-ring {
+  0% { transform: scale(0.92); opacity: 0.7; }
+  70% { transform: scale(1.25); opacity: 0; }
+  100% { opacity: 0; }
+}
+.speaking::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 9999px;
+  border: 3px solid var(--color-flame);
+  animation: speak-ring 1.3s ease-out infinite;
 }

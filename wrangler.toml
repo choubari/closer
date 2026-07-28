@@ -1,0 +1,36 @@
+name = "cold-call-trainer"
+main = ".open-next/worker.js"
+compatibility_date = "2025-03-25"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+directory = ".open-next/assets"
+binding = "ASSETS"
+
+# ── D1 database ────────────────────────────────────────────────────────────
+# Create it once, then paste the returned database_id below:
+#   npx wrangler d1 create cold-call-trainer
+# Apply the schema (local dev + remote):
+#   npx wrangler d1 migrations apply cold-call-trainer            # local
+#   npx wrangler d1 migrations apply cold-call-trainer --remote   # production
+[[d1_databases]]
+binding = "DB"
+database_name = "cold-call-trainer"
+database_id = "af00fbbb-cf7e-4d2e-be47-720fbb209737"
+
+# ── R2 bucket for avatar uploads ───────────────────────────────────────────
+# Bucket "closer". Avatars fall back to generated initials if this is removed.
+[[r2_buckets]]
+binding = "AVATARS"
+bucket_name = "closer"
+
+# Secrets (set with `npx wrangler secret put <NAME>` — never commit values):
+#   GEMINI_API_KEY   Google AI Studio key (AI prospect + judge)
+#   RESEND_API_KEY   Resend API key (magic-link emails)
+#   AUTH_SECRET      random 32+ char string (signs nothing yet; reserved)
+[vars]
+# Non-secret config. Override per-environment as needed.
+APP_URL = "http://localhost:3000"
+RESEND_FROM = "Closer <onboarding@resend.dev>"
+# The email that gets the admin role and owns the built-in exercises.
+ADMIN_EMAIL = "you@example.com"

@@ -39,3 +39,16 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# secrets
+.env
+.env.local
+.env*.local
+
+# cloudflare / opennext
+.open-next/
+.wrangler/
+
+# private exercise packs (never commit domain-specific context)
+src/lib/exercises/private/*
+!src/lib/exercises/private/.gitkeep
