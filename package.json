@@ -7,8 +7,8 @@
     "build": "cross-env NODE_ENV=production next build",
     "start": "next start",
     "lint": "eslint",
-    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "preview": "cross-env NODE_ENV=production opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "cross-env NODE_ENV=production opennextjs-cloudflare build && opennextjs-cloudflare deploy",
     "db:migrate": "wrangler d1 migrations apply cold-call-trainer",
     "db:migrate:remote": "wrangler d1 migrations apply cold-call-trainer --remote",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
