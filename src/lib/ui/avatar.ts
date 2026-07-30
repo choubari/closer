@@ -1,4 +1,4 @@
-// Deterministic persona visuals shared across the arena, brief, call and
+// Deterministic persona visuals shared across the league, brief, call and
 // progress views — mirrors the palette from the Closer design.
 
 const HUES = [

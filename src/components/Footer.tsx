@@ -15,7 +15,7 @@ export function Footer() {
           <span>· {t.footer.tagline}</span>
         </div>
         <nav className="flex flex-wrap items-center gap-x-5 gap-y-2">
-          <Link href="/" className="hover:text-ink">{t.nav.arena}</Link>
+          <Link href="/" className="hover:text-ink">{t.nav.league}</Link>
           <Link href="/leaderboard" className="hover:text-ink">{t.nav.leaderboard}</Link>
           <Link href="/private" className="hover:text-ink">{t.nav.private}</Link>
           <Link href="/progress" className="hover:text-ink">{t.nav.progress}</Link>

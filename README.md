@@ -2,7 +2,7 @@
 
 Practice cold calls **out loud** against an AI prospect for 3 minutes, then get scored by
 an AI coach on your opener, discovery, objection handling, and close. Inspired by the
-"Cold Call Arena" disco challenge — but built as a free, open-source *practice* tool with
+"Cold Call League" disco challenge — but built as a free, open-source *practice* tool with
 multiple exercises, shuffle, and pick-by-theme.
 
 - **Real-time voice** via **Gemini Live API** (native audio) — free tier friendly.
@@ -19,7 +19,7 @@ multiple exercises, shuffle, and pick-by-theme.
 
 ## Views
 
-- **Arena** (`/`) — search, filter by theme, shuffle, and pick an exercise. Each card shows
+- **League** (`/`) — search, filter by theme, shuffle, and pick an exercise. Each card shows
   its creator; the built-ins are owned by the admin account ("Closer Team").
 - **Exercise / Call** (`/exercise/[id]`, `/call`) — pre-call brief, then the live 3-minute
   voice call. Per-exercise routes are shareable.

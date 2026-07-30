@@ -81,7 +81,7 @@ export function ScoreCardView({
           <Button>{t.result.tryAgain}</Button>
         </Link>
         <Link href="/">
-          <Button variant="secondary">{t.result.backToArena}</Button>
+          <Button variant="secondary">{t.result.backToLeague}</Button>
         </Link>
       </div>
 

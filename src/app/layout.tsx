@@ -21,7 +21,7 @@ const plexSans = IBM_Plex_Sans({
 export const metadata: Metadata = {
   title: "Closer — Cold Call Trainer",
   description:
-    "Step into the arena with an AI prospect. Practice cold calls out loud for 3 minutes and get scored by an AI coach.",
+    "Enter the League and take on an AI prospect. Practice cold calls out loud for 3 minutes and get scored by an AI coach.",
 };
 
 export default function RootLayout({

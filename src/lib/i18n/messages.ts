@@ -6,13 +6,13 @@ export const en = {
   brand: "Closer",
 
   nav: {
-    arena: "Arena",
+    league: "League",
     leaderboard: "Leaderboard",
     private: "Private Training",
     progress: "My Progress",
     progressHint: "Stats, history & badges",
     history: "My Progress",
-    back: "Back to the arena",
+    back: "Back to the League",
     signIn: "Sign in",
     signOut: "Log out",
     profile: "Account settings",
@@ -49,8 +49,8 @@ export const en = {
     privacy: "Privacy policy",
   },
 
-  arena: {
-    heroTitle: "Step into the arena with an AI prospect.",
+  league: {
+    heroTitle: "Enter the League and take on an AI prospect.",
     heroSubtitle:
       "Three minutes, one persona, zero mercy. Talk it out loud, get scored on your opener, discovery, objections and close.",
     search: "Search exercises, personas, tags…",
@@ -90,7 +90,7 @@ export const en = {
     bookedNo: "No next step secured",
     summaryTitle: "Jury verdict",
     tryAgain: "Try again",
-    backToArena: "Back to the arena",
+    backToLeague: "Back to the League",
     share: "Share",
     failed: "Could not score the call right now.",
   },
@@ -218,13 +218,13 @@ export const fr: Messages = {
   brand: "Closer",
 
   nav: {
-    arena: "Arène",
+    league: "Ligue",
     leaderboard: "Classement",
     private: "Entraînement privé",
     progress: "Ma progression",
     progressHint: "Stats, historique & badges",
     history: "Ma progression",
-    back: "Retour à l'arène",
+    back: "Retour à la Ligue",
     signIn: "Se connecter",
     signOut: "Se déconnecter",
     profile: "Paramètres du compte",
@@ -261,8 +261,8 @@ export const fr: Messages = {
     privacy: "Politique de confidentialité",
   },
 
-  arena: {
-    heroTitle: "Entrez dans l'arène face à un prospect IA.",
+  league: {
+    heroTitle: "Entrez dans la Ligue face à un prospect IA.",
     heroSubtitle:
       "Trois minutes, un persona, zéro pitié. Parlez à voix haute et soyez noté sur votre accroche, votre découverte, les objections et le closing.",
     search: "Rechercher un exercice, un persona, un tag…",
@@ -302,7 +302,7 @@ export const fr: Messages = {
     bookedNo: "Aucune prochaine étape obtenue",
     summaryTitle: "Verdict du jury",
     tryAgain: "Réessayer",
-    backToArena: "Retour à l'arène",
+    backToLeague: "Retour à la Ligue",
     share: "Partager",
     failed: "Impossible de noter l'appel pour le moment.",
   },

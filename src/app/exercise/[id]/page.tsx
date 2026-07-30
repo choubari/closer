@@ -53,7 +53,7 @@ export default function ExercisePage({
       {state === "loading" && <div className="mt-16 text-center text-muted">…</div>}
       {state === "notfound" && (
         <Card className="mt-6 flex flex-col items-start gap-3 p-8">
-          <p className="text-ink-soft">{t.arena.empty}</p>
+          <p className="text-ink-soft">{t.league.empty}</p>
           <Link href="/">
             <Button variant="secondary" size="sm">
               {t.nav.back}

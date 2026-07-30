@@ -19,7 +19,7 @@ function Logo() {
 }
 
 const NAV = [
-  { key: "arena", href: "/" },
+  { key: "league", href: "/" },
   { key: "leaderboard", href: "/leaderboard" },
   { key: "private", href: "/private" },
 ] as const;

@@ -61,9 +61,9 @@ export default function HomeClient() {
       <div className="mb-9 flex flex-wrap items-start justify-between gap-10">
         <div className="max-w-[640px]">
           <h1 className="font-[family-name:var(--font-display)] text-[38px] font-bold leading-[1.08] sm:text-[44px]">
-            {t.arena.heroTitle}
+            {t.league.heroTitle}
           </h1>
-          <p className="mt-3.5 text-[16.5px] leading-[1.6] text-muted">{t.arena.heroSubtitle}</p>
+          <p className="mt-3.5 text-[16.5px] leading-[1.6] text-muted">{t.league.heroSubtitle}</p>
         </div>
         <div className="relative hidden h-[140px] w-[200px] flex-none sm:block">
           <div className="absolute right-5 top-0 h-[120px] w-[120px] rounded-full bg-flame-soft" />
@@ -76,7 +76,7 @@ export default function HomeClient() {
         <input
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder={t.arena.search}
+          placeholder={t.league.search}
           className="w-full max-w-[420px] rounded-[12px] border border-line bg-paper py-3 text-[14.5px]"
           style={{ paddingLeft: 18, paddingRight: 18 }}
         />
@@ -84,13 +84,13 @@ export default function HomeClient() {
           onClick={shuffle}
           className="flex items-center gap-2 whitespace-nowrap rounded-[12px] bg-espresso px-5 py-3 text-[14.5px] font-bold text-white transition hover:bg-espresso-2"
         >
-          {t.arena.shuffle} <span>→</span>
+          {t.league.shuffle} <span>→</span>
         </button>
       </div>
 
       <div className="mb-7 flex flex-wrap items-center gap-2.5">
         <Chip active={theme === "all"} onClick={() => setTheme("all")}>
-          {t.arena.all}
+          {t.league.all}
         </Chip>
         {themes.map((th) => (
           <Chip key={th.id} active={theme === th.id} onClick={() => setTheme(th.id)}>
@@ -102,7 +102,7 @@ export default function HomeClient() {
       {loading ? (
         <div className="py-16 text-center text-muted">…</div>
       ) : filtered.length === 0 ? (
-        <Card className="p-10 text-center text-muted">{t.arena.empty}</Card>
+        <Card className="p-10 text-center text-muted">{t.league.empty}</Card>
       ) : (
         <div className="grid [grid-template-columns:repeat(auto-fill,minmax(300px,1fr))]" style={{ gap: 18 }}>
           {filtered.map((c) => {
@@ -125,8 +125,8 @@ export default function HomeClient() {
 
                 <div className="mt-auto flex items-center justify-between border-t border-line-soft pt-3">
                   <span className="flex items-center gap-1.5 text-[12px] text-muted">
-                    {t.arena.by} <span className="font-semibold text-ink-soft">{c.creator}</span>
-                    {c.ownedByMe && c.visibility === "private" && <Tag tone="grape">{t.arena.privateTag}</Tag>}
+                    {t.league.by} <span className="font-semibold text-ink-soft">{c.creator}</span>
+                    {c.ownedByMe && c.visibility === "private" && <Tag tone="grape">{t.league.privateTag}</Tag>}
                   </span>
                   <button
                     onClick={() => setShare({ title: L(c.title), id: c.id })}
