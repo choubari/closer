@@ -13,7 +13,7 @@ export async function sendMagicLink(email: string, url: string): Promise<void> {
     console.log(`\n[auth] Magic link for ${email}:\n${url}\n`);
     return;
   }
-  const from = env.RESEND_FROM || "Closer <onboarding@resend.dev>";
+  const from = env.RESEND_FROM || "Closer <closer@mail.choubari.com>";
   const html = `
     <div style="font-family:system-ui,sans-serif;max-width:480px;margin:0 auto;padding:24px;color:#241c14">
       <h1 style="font-size:22px;margin:0 0 8px">Sign in to Closer</h1>
@@ -41,7 +41,7 @@ export async function sendMagicLink(email: string, url: string): Promise<void> {
     // only delivers to the account owner) — print the link to the console.
     if (!isProd) {
       console.log(
-        `\n[auth] Resend send failed (${res.status}); use this link to sign in:\n${url}\n`
+        `\n[auth] Resend send failed (${res.status}); use this link to sign in:\n${url}\n`,
       );
       return;
     }

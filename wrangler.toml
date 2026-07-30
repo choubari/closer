@@ -33,7 +33,7 @@ bucket_name = "closer"
 # resolve correctly. For local dev, .env.local's APP_URL (http://localhost:3000)
 # takes over.
 APP_URL = "https://cold-call-trainer.choub.workers.dev"
-RESEND_FROM = "Closer <onboarding@resend.dev>"
+RESEND_FROM = "Closer <closer@mail.choubari.com>"
 # ADMIN_EMAIL (the email that owns the built-in exercises) is set as a Worker
 # secret in production so it stays out of this public repo:
 #   npx wrangler secret put ADMIN_EMAIL
