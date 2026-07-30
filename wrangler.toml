@@ -3,6 +3,9 @@ main = ".open-next/worker.js"
 compatibility_date = "2025-03-25"
 compatibility_flags = ["nodejs_compat"]
 
+# Keep the *.workers.dev URL live alongside the custom domain.
+workers_dev = true
+
 # Custom domain. Wrangler provisions the DNS record + TLS cert on deploy.
 routes = [
   { pattern = "closer.choubari.com", custom_domain = true },
