@@ -6,6 +6,10 @@ compatibility_flags = ["nodejs_compat"]
 # Keep the *.workers.dev URL live alongside the custom domain.
 workers_dev = true
 
+[observability]
+enabled = true
+head_sampling_rate = 1
+
 # Custom domain. Wrangler provisions the DNS record + TLS cert on deploy.
 routes = [
   { pattern = "closer.choubari.com", custom_domain = true },

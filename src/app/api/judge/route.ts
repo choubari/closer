@@ -48,14 +48,25 @@ export async function POST(req: NextRequest) {
   const ai = new GoogleGenAI({ apiKey });
 
   try {
-    const res = await ai.models.generateContent({
-      model: judgeModel,
-      contents: buildJudgePrompt({ product, goal, transcript: transcriptText, locale }),
-      config: { responseMimeType: "application/json", responseJsonSchema, temperature: 0.4 },
-    });
-
-    const raw = res.text;
-    if (!raw) throw new Error("empty judge response");
+    let raw: string | undefined;
+    let lastErr: unknown;
+    for (let attempt = 1; attempt <= 3; attempt++) {
+      try {
+        const res = await ai.models.generateContent({
+          model: judgeModel,
+          contents: buildJudgePrompt({ product, goal, transcript: transcriptText, locale }),
+          config: { responseMimeType: "application/json", responseJsonSchema, temperature: 0.4 },
+        });
+        raw = res.text;
+        if (raw) break;
+        lastErr = new Error("empty judge response");
+      } catch (e) {
+        lastErr = e;
+        console.error(`[judge] Gemini attempt ${attempt} failed`, e);
+      }
+      if (attempt < 3) await new Promise((r) => setTimeout(r, 500 * attempt));
+    }
+    if (!raw) throw lastErr ?? new Error("empty judge response");
     const parsed = scoreCardSchema.safeParse(JSON.parse(raw));
     if (!parsed.success) {
       console.error("judge schema mismatch", parsed.error);
