@@ -5,6 +5,8 @@ an AI coach on your opener, discovery, objection handling, and close. Inspired b
 "Cold Call League" disco challenge — but built as a free, open-source *practice* tool with
 multiple exercises, shuffle, and pick-by-theme.
 
+![Closer — the League view](docs/screenshot-league.png)
+
 - **Real-time voice** via **Gemini Live API** (native audio) — free tier friendly.
 - **AI judge** via **Gemini Flash** returns a structured 8-criteria scorecard.
 - **Accounts via magic link** (passwordless email through **Resend**) — no passwords stored.
