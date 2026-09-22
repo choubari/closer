@@ -5,6 +5,11 @@ export const en = {
   locale: { en: "EN", fr: "FR" },
   brand: "Closer",
 
+  preview: {
+    text: "This is a limited free preview.",
+    cta: "Self-host your own →",
+  },
+
   nav: {
     league: "League",
     leaderboard: "Leaderboard",
@@ -216,6 +221,11 @@ export type Messages = typeof en;
 export const fr: Messages = {
   locale: { en: "EN", fr: "FR" },
   brand: "Closer",
+
+  preview: {
+    text: "Ceci est un aperçu gratuit limité.",
+    cta: "Hébergez le vôtre →",
+  },
 
   nav: {
     league: "Ligue",
